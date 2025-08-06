@@ -7,9 +7,6 @@
 </p>
 
 
-<p align='center'>
-  <img src='figure/LDGnet.png' width="800px">
-</p>
 
 ## Abstract
 
