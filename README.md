@@ -1,9 +1,9 @@
 
-# Language-aware Domain Generalization Network for Cross-Scene Hyperspectral Image Classification
+# GNSRNet: A Geometric Guided Noise Reduction Super-Resolution Network for Remote Sensing Tiny Object Detection
 
 
 <p align='center'>
-  <img src='figure/LDGnet-ESI.png' width="800px">
+  <img src='GNSR.jpg' width="800px">
 </p>
 
 
@@ -13,24 +13,8 @@
 
 ## Abstract
 
-Text information including extensive prior knowledge about land cover classes has been ignored in hyperspectral image classification (HSI) tasks. It is necessary to explore the effectiveness of linguistic mode in assisting HSI classification. In addition, the large-scale pre-training image-text foundation models have demonstrated great performance in a variety of downstream applications, including zero-shot transfer. However, most domain generalization methods have never addressed mining linguistic modal knowledge to improve the generalization performance of model. To compensate for the inadequacies listed above, a Language-aware Domain Generalization Network (LDGnet) is proposed to learn cross-domain invariant representation from cross-domain shared prior knowledge. The proposed method only trains on the source domain (SD) and then transfers the model to the target domain (TD). The dual-stream architecture including image encoder and text encoder is used to extract visual and linguistic features, in which coarse-grained and fine-grained text representations are designed to extract two levels of linguistic features. Furthermore, linguistic features are used as cross-domain shared semantic space, and visual-linguistic alignment is completed by supervised contrastive learning in semantic space. Extensive experiments on three datasets demonstrate the superiority of the proposed method when compared with state-of-the-art techniques.
+Tiny objects in remote sensing typically face the challenges of being submerged in complex backgrounds, limited feature representation, and high sensitivity to prediction errors due to their small size and diverse shape. These challenges make tiny object detection a significant difficulty, and traditional object detection methods often yield poor performance. To tackle irrelevant information interference, insufficient feature representation, and neglect of the objects' geometric characteristics, a Geometric Guided Noise Reduction Super-Resolution Network is proposed. First, an adaptive dynamic noise reduction module is introduced to fundamentally mitigate spatial misalignment in feature fusion by effectively suppressing the noise arising from the upsampling process. Second, a coupled-training and decoupled-detection Dual-Stream Progressive Super-Resolution detection head is incorporated. The head reduces the receptive field to precisely align with tiny object dimensions and employs a weight-sharing mechanism to implicitly learn super-resolution features. Furthermore, a novel progressive loss annealing strategy is utilized to reduce the dependency of the super-resolution branch. Third, a geometric characteristic regression metric is proposed. This metric comprehensively considers the location prediction and the shape similarity between the prediction and ground truth boxes. By enhancing the quality of prediction boxes, which improve the accuracy of prediction. Extensive experiments were produced on the remote sensing tiny object dataset AI-TOD v1, AI-TOD v2, USOD, and VisDrone, compared with other state-of-the-art (SOTA) methods, GNSRNet demonstrates superior performance on these benchmarks. Specifically, it reaches an AP of 31.4 on AI-TOD v1, 30.4 on AI-TOD v2, 37.4 on USOD, and 30.3 on the VisDrone, which achieves SOTA performance.
 
-## Paper
-
-Please cite our paper if you find the code or dataset useful for your research.
-
-```
-@ARTICLE{10005113,
-  author={Zhang, Yuxiang and Zhang, Mengmeng and Li, Wei and Wang, Shuai and Tao, Ran},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={Language-Aware Domain Generalization Network for Cross-Scene Hyperspectral Image Classification}, 
-  year={2023},
-  volume={61},
-  number={},
-  pages={1-12},
-  doi={10.1109/TGRS.2022.3233885}}
-
-```
 
 ## Requirements
 
