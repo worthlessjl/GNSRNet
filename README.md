@@ -15,40 +15,42 @@ Tiny objects in remote sensing typically face the challenges of being submerged 
 
 ## Requirements
 
-CUDA Version: 11.3
+This project maintains the same environment requirements as YOLOv11. You need install the `ultralytics` package, including all [requirements](https://github.com/ultralytics/ultralytics/blob/main/pyproject.toml). 
+```bash
+pip install ultralytics
+```
+Pytorch>=1.8
 
-torch: 1.11.0
-
-Python: 3.8.10
+Python>=3.8
 
 ## Dataset
 
-The dataset directory should look like this:
+The dataset directory should follow the standard YOLO format:
 
 ```bash
 datasets
-├── Houston
-│   ├── Houston13.mat
-│   ├── Houston13_7gt.mat
-│   ├── Houston18.mat
-│   └── Houston18_7gt.mat
-└── Pavia
-    ├── paviaC.mat
-    └── paviaC_7gt.mat
-    ├── paviaU.mat
-    └── paviaU_7gt.mat
-
+├── USOD
+│   ├── images
+│   │   ├── train
+│   │   │   ├── img001.jpg
+│   │   │   └── ...
+│   │   ├── val
+│   │   │   ├── img101.jpg
+│   │   │   └── ...
+│   └── labels
+│       ├── train
+│       │   ├── img001.txt
+│       │   └── ...
+│       ├── val
+│       │   ├── img101.txt
+│       │   └── ...
 ```
 
 ## Usage
 
-1.You can download [Houston &amp; Pavia](https://github.com/YuxiangZhang-BIT/Data-CSHSI) dataset here, and the CLIP pre-training weight [ViT-B-32.pt](https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt) here.
+1.You can directly use `train.py` to train your model.
 
-2.You can change the `source_name` and `target_name` in train.py to set different transfer tasks.
+2.The `val.py` script is used to validate the model performance.
 
-3.Run python train_queue.py.
+3.The pretrained weights for the datasets are contained in the `runs` directory.
 
-## Note
-
-- The variable names of data and gt in .mat file are set as `ori_data` and `map`.
-- For Pavia dataset and Houston dataset, args.re_ratio is set to 1 and 5, respectively
